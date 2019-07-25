@@ -57,6 +57,12 @@
     line-height: 30px;
     border-bottom: 1px solid dimgray;
     font-weight: 600;
+    padding-left: 8em;
+  }
+  .slicknav_nav li a i {
+    font-size: 16px;
+    color: brown;
+    padding-right: 5px;
   }
   .slicknav_nav li:not(:first-child){
   }
