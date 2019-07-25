@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>eBELL :: Login</title>
+	<link href="/assets/loginstyle.css" rel="stylesheet" type="text/css"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script src="/assets/jquery-1.11.1.min.js"></script>
+</head>
+
+<body style="padding: 4em 0;">
+	<div id="header">
+		<div id="header-content">
+			<a href="<%= root_path %>"><img class="img-fulid" src="/assets/logo.png" alt="eBell"></a>
+		</div>
+	</div>
+	<div class="wthree-dot">
+		<div class="profile">
+			<div class="wrap">
+				<div class="wthree-grids">
+					<div class="content-left">
+						<div class="content-info">
+							<h2>Brief History About Us</h2>
+							<div class="slider">
+								<div class="callbacks_container">
+									<ul class="rslides callbacks callbacks1" id="slider4">
+										<li>
+											<div class="w3layouts-banner-info">
+												<h3>Vivamus dui dolor</h3>
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et placerat leo, non condimentum justo</p>
+											</div>
+										</li>
+										<li>
+											<div class="w3layouts-banner-info">
+												<h3>Duis in nisl egestas</h3>
+												<p>Suspendisse leo lacus, hendrerit consectetur scelerisque in, tempor sit amet tortor. Pellentesque rhoncus</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="clear"> </div>
+							</div>
+							<div class="agileinfo-follow">
+								<h4>Sign Up with</h4>
+							</div>
+							<div class="agileinfo-social-grids">
+								<ul>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+								</ul>
+							</div>
+							<div class="agile-signin">
+								<h4>If you don't have an account <%= link_to 'SignUp', signup_path %></h4>
+							</div>
+						</div>
+					</div>
+					<div class="content-main">
+						<div class="w3ls-subscribe">
+							<h4>eBELL Login</h4>
+							<%= form_for(:session, url: login_path) do |f| %>
+								<%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
+								<%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+								<%= f.label :remember_me do %>
+									<%= f.check_box :remember_me %>
+									<span>Remember Me</span>
+								<% end %>
+								<!-- <div class="forgot">
+									<a href="#">Forgot Password?</a>
+								</div> -->
+								<div style="float: right;">
+									<%= f.submit 'Login' %>
+								</div>								
+							<% end %>
+						</div>
+					</div>
+					<div class="clear"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="/assets/responsiveslides.min.js"></script>
+	<script>
+		$(function () {
+			$("#slider4").responsiveSlides({
+				auto: true,
+				pager:true,
+				nav:false,
+				speed: 400,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+		});
+	</script>
+</body>
+</html>
